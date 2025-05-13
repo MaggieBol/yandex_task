@@ -1,7 +1,8 @@
 import pytest
 from delivery.calculate_price import get_occupation_multiplier
 
-
+"""Check if no occupation
+"""
 def test_get_occupation_multiplier_default():
     assert 1 == get_occupation_multiplier(None)
 

@@ -49,16 +49,19 @@ def data_set():
     for i, row in enumerate(parameters_data_set):
         yield [*row, expected_prices[i]]
 
-
+"""Minumal positive numbers
+"""
 def test_calculate_smallest_number():
     assert 400 == calculate_price("small", "low", False, 1)
 
-
+"""Check limit fragile and distance condition
+"""
 def test_raise_exception_on_fragile_over_30_km():
     with pytest.raises(exceptions.UnsupportedDeliveryParameters):
         assert 2040 == calculate_price("large", "high", True, 31)
 
-
+"""Maximum positive numbers
+"""
 def test_calculate_largest_number():
     assert 800 == calculate_price("large", "high", False, 31)
 

@@ -2,7 +2,9 @@ import pytest
 
 from delivery.calculate_price import get_distance_added_value
 
-
+"""Check from each interval
+ToDo: add boundary values
+"""
 @pytest.mark.parametrize(
     ("distance", "added_value"), [(1, 50), (5, 100), (15, 200), (25, 200), (35, 300)]
 )

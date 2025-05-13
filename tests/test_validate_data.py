@@ -9,7 +9,8 @@ from delivery.exceptions import (
     UnsupportedDeliveryParameters,
 )
 
-
+"""Wrong occupation value
+"""
 def test_raise_exception_on_wrong_occumpation_value():
     with pytest.raises(WrongOccupationValue):
         validate_input_data(
@@ -17,13 +18,16 @@ def test_raise_exception_on_wrong_occumpation_value():
         )
 
 
+"""Wrong distance value
+"""
 def test_raise_exception_on_wrong_distance_type():
     with pytest.raises(WrongDistanceValue):
         validate_input_data(
             size="large", occupation="high", fragile=False, distance="far far away"
         )
 
-
+"""Negative distance value
+"""
 @pytest.mark.parametrize("value", [-1, 0, -1.1])
 def test_raise_exception_on_distance_negative_value(value):
     with pytest.raises(WrongDistanceValue):
@@ -31,12 +35,14 @@ def test_raise_exception_on_distance_negative_value(value):
             size="large", occupation="high", fragile=False, distance=value
         )
 
-
+"""Wrong fragile value
+"""
 def test_raise_exception_on_wrong_fragile_value():
     with pytest.raises(WrongFragileValue):
         validate_input_data(size="large", occupation="high", fragile=1, distance=1)
 
-
+"""Wrong size value
+"""
 def test_raise_exception_on_wrong_size_value():
     with pytest.raises(WrongSizeValue):
         validate_input_data(
