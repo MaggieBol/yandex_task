@@ -1,0 +1,24 @@
+[project]
+name = "calculateprice"
+version = "0.1.0"
+description = "Вычислить цену доставку в зависимости от параметров"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "allpairspy>=2.5.1",
+    "pytest>=8.3.5",
+    "ruff>=0.11.9",
+]
+
+[tool.ruff.lint]
+extend-select = ["B"]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+pythonpath = [ "." ]
